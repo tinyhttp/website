@@ -172,8 +172,8 @@ app
   })
   .use(async (req, res, next) => {
     if (existsSync(`${process.cwd()}/views/pages/${req.url}.eta`)) {
-      const result = await eta.renderFileAsync(`/pages/${req.url}.eta`, title(req.url), {
-        views: 'views',
+      const result = await eta.renderFileAsync(`/${req.url}.eta`, title(req.url), {
+        views: 'views/pages',
         cache: !isDev
       })
 
