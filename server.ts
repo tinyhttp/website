@@ -43,7 +43,7 @@ const NON_MW_PKGS: string[] = [
   'cli'
 ]
 
-const theme = await shiki.loadTheme(`${process.cwd()}/static/shiki/theme.json`)
+const theme = await shiki.loadTheme(`${process.cwd()}/static/theme.json`)
 
 const hl = await shiki.getHighlighter({ theme })
 
