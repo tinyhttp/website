@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "declaration": false,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "target": "ES2019"
+  }
+}
