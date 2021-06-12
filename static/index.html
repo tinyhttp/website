@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="/css/shared.css" />
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/inter.css" />
-    <link rel="stylesheet" href="/css/hljs.css" />
   </head>
   <body>
     <a href="https://github.com/talentlessguy/tinyhttp" target="_blank" rel="noopener noreferrer">
@@ -59,25 +58,29 @@
         <section id="get_started">
           <h2>Quick start</h2>
           <pre id="install">pnpm i @tinyhttp/app @tinyhttp/logger</pre>
-          <pre id="code">
-<code class="language-js"><span class="hljs-keyword">import</span> { App } <span class="hljs-keyword">from</span> <span class="hljs-string">'@tinyhttp/app'</span>
-<span class="hljs-keyword">import</span> { logger } <span class="hljs-keyword">from</span> <span class="hljs-string">'@tinyhttp/logger'</span>
+          <pre
+            id="code"
+            class="shiki"
+            style="background-color: #42192e"
+          ><code><span class="line"><span style="color: #C573DE">import</span><span style="color: #B4B4B4"> { </span><span style="color: #FF8080">App</span><span style="color: #B4B4B4"> } </span><span style="color: #C573DE">from</span><span style="color: #B4B4B4"> </span><span style="color: #6EFF59">&#39;@tinyhttp/app&#39;</span></span>
+<span class="line"><span style="color: #C573DE">import</span><span style="color: #B4B4B4"> { </span><span style="color: #FF8080">logger</span><span style="color: #B4B4B4"> } </span><span style="color: #C573DE">from</span><span style="color: #B4B4B4"> </span><span style="color: #6EFF59">&#39;@tinyhttp/logger&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C573DE">const</span><span style="color: #B4B4B4"> </span><span style="color: #FF8F00">app</span><span style="color: #B4B4B4"> </span><span style="color: #3CC9C2">=</span><span style="color: #B4B4B4"> </span><span style="color: #C573DE">new</span><span style="color: #B4B4B4"> </span><span style="color: #59B4FF">App</span><span style="color: #B4B4B4">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF8080">app</span></span>
+<span class="line"><span style="color: #B4B4B4">  .</span><span style="color: #59B4FF">use</span><span style="color: #B4B4B4">(</span><span style="color: #59B4FF">logger</span><span style="color: #B4B4B4">())</span></span>
+<span class="line"><span style="color: #B4B4B4">  .</span><span style="color: #59B4FF">get</span><span style="color: #B4B4B4">(</span><span style="color: #6EFF59">&#39;/&#39;</span><span style="color: #B4B4B4">, (</span><span style="color: #FF8080">_</span><span style="color: #B4B4B4">, </span><span style="color: #FF8080">res</span><span style="color: #B4B4B4">) </span><span style="color: #C573DE">=&gt;</span><span style="color: #B4B4B4"> </span><span style="color: #C573DE">void</span><span style="color: #B4B4B4"> </span><span style="color: #FF8080">res</span><span style="color: #B4B4B4">.</span><span style="color: #59B4FF">send</span><span style="color: #B4B4B4">(</span><span style="color: #6EFF59">&#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;</span><span style="color: #B4B4B4">))</span></span>
+<span class="line"><span style="color: #B4B4B4">  .</span><span style="color: #59B4FF">get</span><span style="color: #B4B4B4">(</span><span style="color: #6EFF59">&#39;/page/:page/&#39;</span><span style="color: #B4B4B4">, (</span><span style="color: #FF8080">req</span><span style="color: #B4B4B4">, </span><span style="color: #FF8080">res</span><span style="color: #B4B4B4">) </span><span style="color: #C573DE">=&gt;</span><span style="color: #B4B4B4"> {</span></span>
+<span class="line"><span style="color: #B4B4B4">    </span><span style="color: #FF8080">res</span><span style="color: #B4B4B4">.</span><span style="color: #59B4FF">status</span><span style="color: #B4B4B4">(</span><span style="color: #00FFF3">200</span><span style="color: #B4B4B4">).</span><span style="color: #59B4FF">send</span><span style="color: #B4B4B4">(</span><span style="color: #6EFF59">`</span></span>
+<span class="line"><span style="color: #6EFF59">    &lt;h1&gt;Some cool page&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: #6EFF59">    &lt;h2&gt;URL&lt;/h2&gt;</span></span>
+<span class="line"><span style="color: #6EFF59">    </span><span style="color: #C573DE">${</span><span style="color: #FF8080">req</span><span style="color: #B4B4B4">.</span><span style="color: #FF8080">url</span><span style="color: #C573DE">}</span></span>
+<span class="line"><span style="color: #6EFF59">    &lt;h2&gt;Params&lt;/h2&gt;</span></span>
+<span class="line"><span style="color: #6EFF59">    </span><span style="color: #C573DE">${</span><span style="color: #00FFF3">JSON</span><span style="color: #B4B4B4">.</span><span style="color: #3CC9C2">stringify</span><span style="color: #B4B4B4">(</span><span style="color: #FF8080">req</span><span style="color: #B4B4B4">.</span><span style="color: #FF8080">params</span><span style="color: #B4B4B4">, </span><span style="color: #00FFF3">null</span><span style="color: #B4B4B4">, </span><span style="color: #00FFF3">2</span><span style="color: #B4B4B4">)</span><span style="color: #C573DE">}</span></span>
+<span class="line"><span style="color: #6EFF59">  `</span><span style="color: #B4B4B4">)</span></span>
+<span class="line"><span style="color: #B4B4B4">}).</span><span style="color: #59B4FF">listen</span><span style="color: #B4B4B4">(</span><span style="color: #00FFF3">3000</span><span style="color: #B4B4B4">)</span></span>
+<span class="line"></span></code></pre>
 
-<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> App()
-
-app
-  .use(logger())
-  .get(<span class="hljs-string">'/'</span>, (_, res) =&gt; <span class="hljs-keyword">void</span> res.send(<span class="hljs-string">'&lt;h1&gt;Hello World&lt;/h1&gt;'</span>))
-  .get(<span class="hljs-string">'/page/:page/'</span>, (req, res) =&gt; {
-    res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">`
-    &lt;h1&gt;Some cool page&lt;/h1&gt;
-    &lt;h2&gt;URL&lt;/h2&gt;
-    <span class="hljs-subst">${req.url}</span>
-    &lt;h2&gt;Params&lt;/h2&gt;
-    <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(req.params, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>)}</span>
-  `</span>)
-}).listen(<span class="hljs-number">3000</span>)</code>
-          </pre>
           <div id="window">
             <div id="address">http://localhost:3000/<input id="editable" type="text" value="page/test" /></div>
             <div id="content">
@@ -158,6 +161,7 @@ app
         ><a href="https://deta.sh"><img height="72px" alt="Deta" src="/images/deta.png" /></a
       ></span>
     </footer>
-    <script src="/js/index.js"></script>
+    <script src="/shiki/dist/index.unpkg.iife.js"></script>
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>
