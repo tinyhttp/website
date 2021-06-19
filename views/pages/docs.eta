@@ -90,7 +90,7 @@
  <details>
   <summary>Methods</summary>
   <ul>
-    <li><a href="resappend">res.append</a></li>
+    <li><a href="#resappend">res.append</a></li>
     <li><a href="#rescookie">res.cookie</a></li>
     <li><a href="#resclearcookie">res.clearCookie</a></li>
     <li><a href="#resend">res.end</a></li>
