@@ -91,21 +91,6 @@
     url('/inter_web/Inter-ExtraBoldItalic.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/inter_web/Inter-Black.woff2') format('woff2'), url('inter_web/Inter-Black.woff') format('woff');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url('/inter_web/Inter-BlackItalic.woff2') format('woff2'), url('inter_web/Inter-BlackItalic.woff') format('woff');
-}
-
 /* -------------------------------------------------------
 Variable font.
 Usage:

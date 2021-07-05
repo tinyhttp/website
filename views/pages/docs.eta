@@ -114,7 +114,7 @@
 
 <main>
 
-# 1.X API
+# API Documentation
 
 ## Application
 
@@ -240,7 +240,6 @@ app.use((req, res) => void res.send(`Hostname: ${req.hostname}`)).listen(3000)
 Here's a list of all of the settings:
 
 - `networkExtensions` - network `req` extensions
-- `freshnessTesting` - `req.fresh` and `req.stale` properties
 - `subdomainOffset` - subdomain offset for `req.subdomains`
 - `bindAppToReqRes` - bind current `App` to `req.app` and `res.app`
 - `xPoweredBy` - set `X-Powered-By: "tinyhttp"` header
@@ -256,13 +255,6 @@ Enabled a list of Request object extensions related to network.
 - [`req.ip`](#reqip)
 - [`req.ips`](#reqips)
 - [`req.subdomains`](#reqsubdomains)
-
-##### `freshnessTesting`
-
-Enables 2 properties - `req.fresh` and `req.stale`:
-
-- [`req.fresh`](#reqfresh)
-- [`req.stale`](#reqstale)
 
 ##### `subdomainOffset`
 
@@ -697,8 +689,6 @@ console.dir(req.xhr)
 
 #### `req.fresh`
 
-> This property can be enabled via `freshnessTesting` setting
-
 When the response is still “fresh” in the client’s cache true is returned, otherwise false is returned to indicate that the client cache is now stale and the full response should be sent.
 
 When a client sends the `Cache-Control: no-cache` request header to indicate an end-to-end reload request, this module will return false to make handling these requests transparent.
@@ -711,8 +701,6 @@ console.dir(req.fresh)
 ```
 
 #### `req.stale`
-
-> This property can be enabled via `freshnessTesting` setting
 
 Indicates whether the request is “stale,” and is the opposite of `req.fresh`. For more information, see [`req.fresh`](#reqfresh).
 

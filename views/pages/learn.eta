@@ -634,7 +634,7 @@ There are articles of deploying an Express / Node.js app with Docker. You can us
 
 ### Older versions of Node.js
 
-In case you have to run your application in an old Node.js environment (>= 12.4) you can set up [Babel](https://babeljs.io/) to compile modern syntax from ES2019 to older versions.
+In case you have to run your application in an old Node.js environment (12 and older) you can set up [Babel](https://babeljs.io/) to compile modern syntax from ES2019 to older versions.
 
 See [Babel example](https://github.com/talentlessguy/tinyhttp/blob/master/examples/babel/server.js) for complete setup.
 

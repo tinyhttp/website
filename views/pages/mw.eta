@@ -16,7 +16,7 @@
       </div>
       <div>
         <h2>Source</h2>
-        <a target="_blank" rel="noopener noreferrer" href="<%= it.link %>"><%= it.dir %></a>
+        <a target="_blank" rel="noopener noreferrer" href="<%= it.link %>"><%= it.pkg %></a>
       </div>
     </div>
   </div>
