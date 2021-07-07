@@ -9,6 +9,7 @@
     <ul>
       <li><a href="#nomatchhandlerreq-res">noMatchHandler</a></li>
       <li><a href="#onerrorerr-req-res">onError</a></li>
+      <li><a href="#applyextensionsfn">applyExtensions</a></li>
     </ul>
   </details>
 
@@ -179,10 +180,9 @@ const app = new App({
 app.get('/', (req, res) => void res.send('hello world')).listen(3000)
 ```
 
-#### `applyExtensions(fn)`
+#### `applyExtensions`
 
-A function that patches `req` and `res` objects with extensions, such as `res.send` or `req.xhr`. This parameter is useful for adding custom extensions or removing the ones that aren't used.
-
+A handler-like function that adds request and response extensions to handlers.
 By default, the `extendMiddleware` function is used, which contains all tinyhttp's `req` / `res` extensions.
 
 ```js
@@ -197,7 +197,7 @@ const app = new App({
 })
 ```
 
-In some cases when you need to reach the highest performance you can define a custom function for extensions and pass it in the `App` constructor:
+When an empty function is passed, all extensions from `extendMiddleware` aren't included anymore:
 
 ```js
 import { App } from '@tinyhttp/app'
@@ -217,7 +217,7 @@ You can also disable all of the extensions by passing an empty function:
 import { App } from '@tinyhttp/app'
 
 const app = new App({
-  applyExtensions: (req, res, next) => void 0
+  applyExtensions: (req, res, next) => { next() }
 })
 ```
 
