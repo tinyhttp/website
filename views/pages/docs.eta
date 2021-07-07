@@ -9,7 +9,7 @@
     <ul>
       <li><a href="#nomatchhandlerreq-res">noMatchHandler</a></li>
       <li><a href="#onerrorerr-req-res">onError</a></li>
-      <li><a href="#applyextensionsfn">applyExtensions</a></li>
+      <li><a href="#applyextensions">applyExtensions</a></li>
     </ul>
   </details>
 
