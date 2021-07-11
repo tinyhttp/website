@@ -92,7 +92,7 @@ app
         pkgs = mwList.filter((el: any) => {
           const query = req.query.q as string
 
-          return el.name.indexOf(query.toLowerCase()) > -1
+          return el.indexOf(query.toLowerCase()) > -1
         })
       }
 
