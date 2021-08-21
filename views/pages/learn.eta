@@ -26,6 +26,7 @@
   </ul>
   <a href="#advanced-topics"><h2>Advanced topics</h2></a>
   <ul>
+    <li><a href="#usage-with-deno">Usage with Deno</a></li>
     <li><a href="#database-integration">Database integration</a></li>
     <li><a href="#deployment">Deployment</a></li>
     <li><a href="#older-versions-of-nodejs">Old versions of Node.js</a></li>
@@ -505,13 +506,32 @@ As a rule, when you develop web applications, a web framework is not enough. Thi
 
 ## Advanced topics
 
+### Usage with Deno
+
+tinyhttp has an experimental [Deno port](https://github.com/deno-libs/tinyhttp).
+
+There are multiple ways to import tinyhttp in Deno:
+
+```ts
+import { App } from 'https://deno.land/x/tinyhttp/mod.ts' // official registry
+import { App } from 'https://x.nest.land/tinyhttp/mod.ts' // nest.land registry
+import { App } from 'https://denopkg.com/deno-libs/tinyhttp/mod.ts' // directly from GitHub
+
+// all of them work the same
+```
+
+In general, Deno port is the same as tinyhttp one, but there are a few differences.
+
+- `app.handler` doesn't have a `res` argument since `net/http`'s request object already has a `.respond(res)` method
+- `res.sendFile` is not well tested yet and it might not work properly (but it will be fixed soon)
+
 ### Database integration
 
-As any other web framework, tinyhttp works well with databases. There is a plenty of [examples](https://github.com/talentlessguy/tinyhttp/tree/master/examples) for tinyhttp databases integration, including MongoDB, Fauna, Postgres and others.
+As any other web framework, tinyhttp works well with databases. There is a plenty of [examples](https://github.com/talentlessguy/tinyhttp/tree/master/examples) for databases integration, including MongoDB, Fauna, Postgres and others.
 
 #### Example
 
-In a tinyhttp app you initiatialize a client for your database and later execute queries inside middlewares.
+You first need to initiatialize a client for your database. Then you can use it inside middlewares to execute queries.
 
 Here's a simple [example](https://github.com/talentlessguy/tinyhttp/tree/master/examples/mongodb) with MongoDB:
 
