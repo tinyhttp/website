@@ -29,7 +29,6 @@
     <li><a href="#usage-with-deno">Usage with Deno</a></li>
     <li><a href="#database-integration">Database integration</a></li>
     <li><a href="#deployment">Deployment</a></li>
-    <li><a href="#older-versions-of-nodejs">Old versions of Node.js</a></li>
   </ul>
 </aside>
 
@@ -651,11 +650,5 @@ There are articles of deploying an Express / Node.js app with Docker. You can us
 
 - [Run Express in Docker](https://dev.to/tirthaguha/run-express-in-docker-2o44)
 - [Dockerizing a Node.js web app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
-
-### Older versions of Node.js
-
-In case you have to run your application in an old Node.js environment (12 and older) you can set up [Babel](https://babeljs.io/) to compile modern syntax from ES2019 to older versions.
-
-See [Babel example](https://github.com/talentlessguy/tinyhttp/blob/master/examples/babel/server.js) for complete setup.
 
 </main>

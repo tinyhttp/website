@@ -192,7 +192,9 @@ async function startApp() {
       } else next()
     })
 
-    .listen(3000, () => console.log(`Running on http://localhost:${PORT} in ${process.env.NODE_ENV} mode`))
+    .listen(3000, () =>
+      console.log(`Running on http://localhost:${PORT} in ${process.env.NODE_ENV || 'development'} mode`)
+    )
 }
 
 startApp()
