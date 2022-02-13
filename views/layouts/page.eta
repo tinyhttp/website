@@ -22,18 +22,18 @@
   <body>
     <nav>
       <a href="/">Home</a>
-      <a href="https://github.com/talentlessguy/tinyhttp/tree/master/examples" target="_blank" rel="noopener noreferrer"
+      <a href="https://github.com/tinyhttp/tinyhttp/tree/master/examples" target="_blank" rel="noopener noreferrer"
         >Examples</a
       >
       <a href="/learn">Learn</a>
       <a href="/docs">Docs</a>
       <a href="/mw">Middleware</a>
-      <a href="https://github.com/talentlessguy/tinyhttp#donate">Donate</a>
+      <a href="https://github.com/tinyhttp/tinyhttp#donate">Donate</a>
     </nav>
     <%~ it.body %>
   </body>
   <footer>
-  <span>v1rtl © <a href="https://github.com/talentlessguy/tinyhttp/blob/master/LICENSE">MIT License</a></span>
+  <span>v1rtl © <a href="https://github.com/tinyhttp/tinyhttp/blob/master/LICENSE">MIT License</a></span>
    
   </footer>
 </html>

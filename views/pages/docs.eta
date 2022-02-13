@@ -1135,7 +1135,7 @@ res.type('png')
 
 #### `res.jsonp`
 
-Send JSON response with JSONP callback support. `res.jsonp` isn't used that often so it's located in a separate package - [`@tinyhttp/jsonp`](https://github.com/talentlessguy/tinyhttp/blob/master/packages/jsonp)
+Send JSON response with JSONP callback support. `res.jsonp` isn't used that often so it's located in a separate package - [`@tinyhttp/jsonp`](https://github.com/tinyhttp/tinyhttp/blob/master/packages/jsonp)
 
 Here's how to enable it:
 
