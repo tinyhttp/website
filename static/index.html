@@ -25,18 +25,18 @@
     <link rel="stylesheet" href="/css/inter.css" />
   </head>
   <body>
-    <a href="https://github.com/talentlessguy/tinyhttp" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/tinyhttp/tinyhttp" target="_blank" rel="noopener noreferrer">
       <div id="gh"><img src="/images/github.svg" alt="github" aria-hidden="true" /><span>Star on GitHub</span></div>
     </a>
     <nav>
       <a href="/">Home</a>
-      <a href="https://github.com/talentlessguy/tinyhttp/tree/master/examples" target="_blank" rel="noopener noreferrer"
+      <a href="https://github.com/tinyhttp/tinyhttp/tree/master/examples" target="_blank" rel="noopener noreferrer"
         >Examples</a
       >
       <a href="/learn">Learn</a>
       <a href="/docs">Docs</a>
       <a href="/mw">Middleware</a>
-      <a href="https://github.com/talentlessguy/tinyhttp#donate">Donate</a>
+      <a href="https://github.com/tinyhttp/tinyhttp#donate">Donate</a>
     </nav>
     <main>
       <header>
@@ -108,9 +108,7 @@
             middleware that uses
             <code>(req: IncomingMessage, res: ServerResponse, next?: (err?: any) => void)</code> for function arguments,
             will work with tinyhttp. Check out
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/examples/graphql"
-              >tinyhttp + express-graphql
-            </a>
+            <a href="https://github.com/tinyhttp/tinyhttp/tree/master/examples/graphql">tinyhttp + express-graphql </a>
             integration for an example of using Express middleware.
           </p>
           <h3>Async middleware support</h3>
@@ -118,27 +116,25 @@
             Unlike Express, tinyhttp supports async / await for routes. There are proper typings for async handlers, and
             a function checker inside tinyhttp to resolve async functions, and execute sync ones. To say shorter, both
             sync and async work fine. Check
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/examples/async">async</a> or
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/examples/mongodb">mongodb</a> examples to see
-            how to make async handlers.
+            <a href="https://github.com/tinyhttp/tinyhttp/tree/master/examples/async">async</a> or
+            <a href="https://github.com/tinyhttp/tinyhttp/tree/master/examples/mongodb">mongodb</a> examples to see how
+            to make async handlers.
           </p>
           <h3>Prebuilt middleware for the smoothest experience</h3>
           <p>
             A majority of express middlewares is quite old and don't provide ESM versions and possibly may have type
             conflicts (even though 90% of the time Express wares' types are ok w/ tinyhttp). So, because of this, we've
             built a list of our own middlewares for most common tasks in backend development, including
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/packages/logger">logger</a>,
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/packages/jwt">JWT</a> and
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/packages/cors">CORS</a> middlewares.
+            <a href="https://github.com/tinyhttp/logger">logger</a>,
+            <a href="https://github.com/tinyhttp/jwt">JWT</a> and
+            <a href="https://github.com/tinyhttp/cors">CORS</a> middlewares.
           </p>
           <h3>Completely modular</h3>
           <p>
             (Almost) all parts of tinyhttp are splitted into modules. Feel free to use
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/packages/etag"
-              ><code>@tinyhttp/etag</code></a
-            >
+            <a href="https://github.com/tinyhttp/tinyhttp/tree/master/packages/etag"><code>@tinyhttp/etag</code></a>
             or
-            <a href="https://github.com/talentlessguy/tinyhttp/tree/master/packages/cookie"
+            <a href="https://github.com/tinyhttp/tinyhttp/tree/master/packagzes/cookie"
               ><code>@tinyhttp/cookie</code></a
             >
             in any other HTTP application with any (or without) web framework . Same goes to (almost) all of the
@@ -156,7 +152,7 @@
       </div>
     </main>
     <footer>
-      <span>v1rtl © <a href="https://github.com/talentlessguy/tinyhttp/blob/master/LICENSE">MIT License</a></span>
+      <span>v1rtl © <a href="https://github.com/tinyhttp/tinyhttp/blob/master/LICENSE">MIT License</a></span>
     </footer>
     <script type="module" src="/js/index.js"></script>
   </body>
