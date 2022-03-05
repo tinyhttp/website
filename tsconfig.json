@@ -4,6 +4,7 @@
     "declaration": false,
     "esModuleInterop": true,
     "moduleResolution": "Node",
-    "target": "es2020"
+    "target": "es2020",
+    "skipLibCheck": true
   }
 }
