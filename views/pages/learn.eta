@@ -122,7 +122,7 @@ Although tinyhttp tries to be as close to Express as possible, there are some ke
 - **tinyhttp doesn't put `err` object in middleware if the previous one passed error**. Instead, it uses a [generic error handler](/docs#onerrorerr-req-res).
 - **tinyhttp doesn't include static server and body parser out of the box**. To reduce module size these things were put in separate middleware modules, such as [`milliparsec`](https://github.com/talentlessguy/milliparsec).
 
-Note that maximum compatability is in progress so some of the points might change.
+Note that maximum compatibility is in progress so some of the points might change.
 
 ### Install
 
