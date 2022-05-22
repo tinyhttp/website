@@ -723,7 +723,7 @@ console.log(req.ip)
 Contains an array of remote IP addresses of the request.
 
 ```ts
-console.log(req.ip)
+console.log(req.ips)
 // => [127.0.0.1']
 ```
 
