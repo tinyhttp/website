@@ -358,7 +358,7 @@ Routes HTTP GET requests to the specified path with the specified handler functi
 
 ```ts
 app.get('/', (req, res) => {
-  res.send(`${req.method || 'GET'} request to homepage`
+  res.send(`${req.method || 'GET'} request to homepage`)
 })
 ```
 
@@ -368,7 +368,7 @@ Routes HTTP POST requests to the specified path with the specified handler funct
 
 ```ts
 app.post('/', (req, res) => {
-  res.send(`${req.method || 'POST'} request to homepage`
+  res.send(`${req.method || 'POST'} request to homepage`)
 })
 ```
 
