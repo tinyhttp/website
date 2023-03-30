@@ -128,7 +128,7 @@ Note that maximum compatibility is in progress so some of the points might chang
 
 tinyhttp requires [Node.js 12.4.0 or newer](https://node.green/#ES2019) or newer. It is recommended to use [pnpm](https://pnpm.js.org/) because tinyhttp reuses modules in some middlewares, although it's optional.
 
-You can quickly setup a working app with [tinyhttp CLI](https://github.com/talentlessguy/tinyhttp/tree/master/packages/cli):
+You can quickly setup a working app with [tinyhttp CLI](https://github.com/tinyhttp/cli):
 
 ```sh
 # Install tinyhttp CLI
