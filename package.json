@@ -21,7 +21,7 @@
   "scripts": {
     "start": "NODE_ENV=production node ./dist/server.js",
     "dev": "tsx server.ts",
-    "build": "tsx ./server.ts --outfile=dist/server.js --define:process.env.NODE_ENV=\\\"production\\\""
+    "build": "esbuild ./server.ts --outfile=dist/server.js --define:process.env.NODE_ENV=\\\"production\\\""
   },
   "devDependencies": {
     "@types/marked": "^5.0.0",
