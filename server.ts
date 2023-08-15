@@ -1,7 +1,7 @@
 import { App, renderTemplate } from '@tinyhttp/app'
 import serve from 'sirv'
 import { enableCaching, send, sendFile, sendStatus } from '@tinyhttp/send'
-import { getQueryParams, getURLParams } from '@tinyhttp/url'
+import { getQueryParams } from '@tinyhttp/url'
 import * as eta from 'eta'
 import { EtaConfig } from 'eta/dist/types/config'
 import { marked } from 'marked'
@@ -12,7 +12,7 @@ import { fetchBuilder, FileSystemCache } from 'node-fetch-cache'
 const fetch = fetchBuilder.withCache(
   new FileSystemCache({
     cacheDirectory: './.cache',
-    ttl: 1000 * 60 * 60
+    ttl: 1000 * 60 * 60,
   })
 )
 
@@ -32,14 +32,14 @@ const mwList = [
   '@tinyhttp/swagger',
   'lru-send',
   'malibu',
-  'tinyws'
+  'tinyws',
 ]
 
 const app = new App<EtaConfig>({
   noMatchHandler: (_, res) => {
     res.format({
       text: (_, res) => res.sendStatus(404),
-      html: (_, res) => res.sendFile(`${process.cwd()}/static/404.html`)
+      html: (_, res) => res.sendFile(`${process.cwd()}/static/404.html`),
     })
   },
   applyExtensions: (req, res, next) => {
@@ -51,7 +51,7 @@ const app = new App<EtaConfig>({
     res.render = renderTemplate(req, res, app)
 
     next()
-  }
+  },
 })
 
 const PORT = parseInt(process.env.PORT, 10) || 3000
@@ -61,11 +61,13 @@ const isDev = process.env.NODE_ENV !== 'production'
 const title = (url: string) => {
   if (url.startsWith('/docs'))
     return {
-      title: 'Docs 📖 | tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express'
+      title:
+        'Docs 📖 | tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express',
     }
   else if (url.startsWith('/learn'))
     return {
-      title: 'Learn 📚 | tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express'
+      title:
+        'Learn 📚 | tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express',
     }
 }
 
@@ -81,7 +83,7 @@ async function startApp() {
       serve('static', {
         dev: isDev,
         immutable: !isDev,
-        maxAge: 31536000
+        maxAge: 31536000,
       })
     )
     .get('/mw', async (req, res, next) => {
@@ -112,7 +114,7 @@ async function startApp() {
                 pkgs
               )
               .join('<br />'),
-            head: `<link rel="stylesheet" href="/css/search.css" />`
+            head: `<link rel="stylesheet" href="/css/search.css" />`,
           },
           { renderOptions: { autoEscape: false, cache: !isDev }, cache: !isDev }
         )
@@ -146,7 +148,7 @@ async function startApp() {
             if (!lang) lang = 'txt'
 
             return hl.codeToHtml(code, lang)
-          }
+          },
         })
 
         const repo = pkgBody.repository
@@ -164,7 +166,7 @@ async function startApp() {
             pkg: name,
             version,
             title: `${name} | tinyhttp`,
-            head: `<link rel="stylesheet" href="/css/mw.css" />`
+            head: `<link rel="stylesheet" href="/css/mw.css" />`,
           },
           { renderOptions: { autoEscape: false } }
         )
@@ -172,10 +174,14 @@ async function startApp() {
     })
     .use(async (req, res, next) => {
       if (req.url === '/docs' || req.url === '/learn') {
-        const result = await eta.renderFileAsync(`/${req.url}.eta`, title(req.url), {
-          views: 'views/pages',
-          cache: !isDev
-        })
+        const result = await eta.renderFileAsync(
+          `/${req.url}.eta`,
+          title(req.url),
+          {
+            views: 'views/pages',
+            cache: !isDev,
+          }
+        )
 
         if (result) {
           enableCaching(res, { maxAge: 3600 * 24 * 365, immutable: !isDev })
@@ -185,7 +191,7 @@ async function startApp() {
                 if (!lang) lang = 'txt'
 
                 return hl.codeToHtml(code, lang)
-              }
+              },
             })
           )
         } else next()
@@ -193,7 +199,11 @@ async function startApp() {
     })
 
     .listen(3000, () =>
-      console.log(`Running on http://localhost:${PORT} in ${process.env.NODE_ENV || 'development'} mode`)
+      console.log(
+        `Running on http://localhost:${PORT} in ${
+          process.env.NODE_ENV || 'development'
+        } mode`
+      )
     )
 }
 

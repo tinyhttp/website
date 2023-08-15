@@ -244,6 +244,7 @@ Here's a list of all of the settings:
 - `bindAppToReqRes` - bind current `App` to `req.app` and `res.app`
 - `xPoweredBy` - set `X-Powered-By: "tinyhttp"` header
 - `enableReqRoute` - enable `req.route` property
+- `views` - views directory where templates are located
 
 ##### `networkExtensions`
 
@@ -424,11 +425,11 @@ Register a template engine. Works with any Express template engines that contain
 
 ```js
 import { App } from '@tinyhttp/app'
-import ejs from 'ejs'
+import { renderFile } from 'eta'
 
 const app = new App()
 
-app.engine('ejs', ejs.renderFile) // map app.engines['ejs'] to ejs.renderFile
+app.engine('eta', renderFile) // map app.engines['eta'] to `renderFile`
 ```
 
 #### `app.render`
@@ -437,15 +438,15 @@ Render a file with the engine that was set previously via [`app.engine`](#appeng
 
 ```js
 import { App } from '@tinyhttp/app'
-import ejs from 'ejs'
+import { renderFile } from 'eta'
 
 const app = new App()
 
-app.engine('ejs', ejs.renderFile)
+app.engine('eta', renderFile)
 
 app.render(
-  'index.ejs',
-  { name: 'EJS' },
+  'index',
+  { name: 'Eta' },
   (err, html) => {
     if (err) throw err
     doSomethingWithHTML(html)
@@ -456,7 +457,7 @@ app.render(
 )
 ```
 
-Almost every engine is supported if it can render a single file. Some engines may have different arguments (for example Pug doesn't require a `data` object) but you can write a function to have the same arguments.
+tinyhttp doesn't support `app.render` overloading yet. Because of that, some engines (Pug, for example) may require additional wrapping.
 
 ```js
 import { App } from '@tinyhttp/app'
