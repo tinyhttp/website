@@ -1,0 +1,25 @@
+{
+  "extends":["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // or "error"
+      { 
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

@@ -1,10 +1,11 @@
-import { App, renderTemplate } from '@tinyhttp/app'
+import { App, Request, Response, renderTemplate } from '@tinyhttp/app'
 import serve from 'sirv'
 import { enableCaching, send, sendFile, sendStatus } from '@tinyhttp/send'
 import { getQueryParams } from '@tinyhttp/url'
 import * as eta from 'eta'
 import { EtaConfig } from 'eta/dist/types/config'
-import { marked } from 'marked'
+import { Marked } from 'marked'
+import { markedHighlight } from 'marked-highlight'
 import shiki from 'shiki'
 import { lruSend } from 'lru-send'
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache'
@@ -38,8 +39,9 @@ const mwList = [
 const app = new App<EtaConfig>({
   noMatchHandler: (_, res) => {
     res.format({
-      text: (_, res) => res.sendStatus(404),
-      html: (_, res) => res.sendFile(`${process.cwd()}/static/404.html`),
+      text: (_: Request, res: Response) => res.sendStatus(404),
+      html: (_: Request, res: Response) =>
+        res.sendFile(`${process.cwd()}/static/404.html`),
     })
   },
   applyExtensions: (req, res, next) => {
@@ -76,6 +78,16 @@ async function startApp() {
 
   const hl = await shiki.getHighlighter({ theme })
 
+  const marked = new Marked(
+    markedHighlight({
+      highlight(code, lang) {
+        if (!lang) lang = 'txt'
+
+        return hl.codeToHtml(code, { lang })
+      },
+    })
+  )
+
   app
     .use(lruSend())
     .engine('eta', eta.renderFile)
@@ -91,7 +103,7 @@ async function startApp() {
         let pkgs = mwList
 
         if (req.query.q) {
-          pkgs = mwList.filter((el: any) => {
+          pkgs = mwList.filter((el) => {
             const query = req.query.q as string
 
             return el.indexOf(query.toLowerCase()) > -1
@@ -123,7 +135,23 @@ async function startApp() {
       }
     })
     .get('/mw/*', async (req, res, next) => {
-      let json: any, status: number
+      let json: {
+          'dist-tags': {
+            latest: string
+          }
+          readme?: string
+          versions: {
+            [key: string]: {
+              repository: {
+                directory: string
+                url: string
+                type: string
+              }
+            }
+          }
+          name: string
+        },
+        status: number
 
       enableCaching(res, { maxAge: 31536000, immutable: !isDev })
 
@@ -143,17 +171,7 @@ async function startApp() {
 
         const pkgBody = json.versions[version]
 
-        const readme = marked(json.readme || '', {
-          highlight(code, lang) {
-            if (!lang) lang = 'txt'
-
-            return hl.codeToHtml(code, lang)
-          },
-        })
-
         const repo = pkgBody.repository
-
-        const dir = repo.directory
 
         const link = repo.url.replace(repo.type + '+', '').replace('.git', '')
 
@@ -161,8 +179,8 @@ async function startApp() {
           `pages/mw.eta`,
           {
             link,
-            dir,
-            readme,
+            dir: repo.directory,
+            readme: marked.parse(json.readme || ''),
             pkg: name,
             version,
             title: `${name} | tinyhttp`,
@@ -185,15 +203,7 @@ async function startApp() {
 
         if (result) {
           enableCaching(res, { maxAge: 3600 * 24 * 365, immutable: !isDev })
-          res.send(
-            marked(result, {
-              highlight(code, lang) {
-                if (!lang) lang = 'txt'
-
-                return hl.codeToHtml(code, lang)
-              },
-            })
-          )
+          res.send(marked.parse(result))
         } else next()
       } else next()
     })
