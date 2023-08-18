@@ -11,6 +11,9 @@ dependencies:
   '@tinyhttp/logger':
     specifier: ^1.3.4
     version: 1.3.4
+  '@tinyhttp/res':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@tinyhttp/send':
     specifier: ^2.1.0
     version: 2.1.0

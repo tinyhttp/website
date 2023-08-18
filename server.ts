@@ -1,6 +1,7 @@
 import { App, Request, Response, renderTemplate } from '@tinyhttp/app'
 import serve from 'sirv'
 import { enableCaching, send, sendFile, sendStatus } from '@tinyhttp/send'
+import { formatResponse } from '@tinyhttp/res'
 import { getQueryParams } from '@tinyhttp/url'
 import * as eta from 'eta'
 import { EtaConfig } from 'eta/dist/types/config'
@@ -51,6 +52,7 @@ const app = new App<EtaConfig>({
     res.sendFile = sendFile(req, res)
     res.sendStatus = sendStatus(req, res)
     res.render = renderTemplate(req, res, app)
+    res.format = formatResponse(req, res, next)
 
     next()
   },
