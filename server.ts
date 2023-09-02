@@ -210,7 +210,7 @@ async function startApp() {
       } else next()
     })
 
-    .listen(3000, () =>
+    .listen(PORT, () =>
       console.log(
         `Running on http://localhost:${PORT} in ${
           process.env.NODE_ENV || 'development'
