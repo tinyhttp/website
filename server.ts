@@ -10,6 +10,7 @@ import { markedHighlight } from 'marked-highlight'
 import shiki from 'shiki'
 import { lruSend } from 'lru-send'
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache'
+import { logger } from '@tinyhttp/logger'
 
 const fetch = fetchBuilder.withCache(
   new FileSystemCache({
@@ -91,6 +92,7 @@ async function startApp() {
   )
 
   app
+    .use(logger())
     .use(lruSend())
     .engine('eta', eta.renderFile)
     .use(
