@@ -7,6 +7,7 @@ import * as eta from 'eta'
 import { EtaConfig } from 'eta/dist/types/config'
 import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
+import { gfmHeadingId } from 'marked-gfm-heading-id'
 import shiki from 'shiki'
 import { lruSend } from 'lru-send'
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache'
@@ -87,7 +88,8 @@ async function startApp() {
 
         return hl.codeToHtml(code, { lang })
       },
-    })
+    }),
+    gfmHeadingId()
   )
 
   app
