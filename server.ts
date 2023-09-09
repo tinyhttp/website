@@ -59,11 +59,11 @@ const app = new App<EtaConfig>({
   },
 })
 
-const PORT = parseInt(process.env.PORT, 10) || 3000
+const PORT = parseInt(process.env.PORT!, 10) || 3000
 
 const isDev = process.env.NODE_ENV !== 'production'
 
-const title = (url: string) => {
+const title = (url: string): { title: string } => {
   if (url.startsWith('/docs'))
     return {
       title:
@@ -73,6 +73,11 @@ const title = (url: string) => {
     return {
       title:
         'Learn 📚 | tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express',
+    }
+  else
+    return {
+      title:
+        'tinyhttp — 0-legacy, tiny & fast web framework as a replacement of Express',
     }
 }
 
@@ -139,7 +144,7 @@ async function startApp() {
       }
     })
     .get('/mw/*', async (req, res, next) => {
-      let json: {
+      let json!: {
           'dist-tags': {
             latest: string
           }
@@ -147,15 +152,15 @@ async function startApp() {
           versions: {
             [key: string]: {
               repository: {
-                directory: string
-                url: string
+                directory?: string
+                url?: string
                 type: string
               }
             }
           }
           name: string
         },
-        status: number
+        status = 404
 
       enableCaching(res, { maxAge: 31536000, immutable: !isDev })
 
@@ -177,7 +182,9 @@ async function startApp() {
 
         const repo = pkgBody.repository
 
-        const link = repo.url.replace(repo.type + '+', '').replace('.git', '')
+        const link = repo.url
+          ? repo.url.replace(repo.type + '+', '').replace('.git', '')
+          : null
 
         res.render(
           `pages/mw.eta`,

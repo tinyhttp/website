@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "target": "es2020",
     "skipLibCheck": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "strict": true
   }
 }
