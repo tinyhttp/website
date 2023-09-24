@@ -245,6 +245,9 @@ Here's a list of all of the settings:
 - `xPoweredBy` - set `X-Powered-By: "tinyhttp"` header
 - `enableReqRoute` - enable `req.route` property
 - `views` - views directory where templates are located
+- `view` - custom View object to handle template engine rendering logic
+- `view cache` - toggle caching of views
+- `view engine` - the default engine extension (e.g. `eta`)
 
 ##### `networkExtensions`
 
