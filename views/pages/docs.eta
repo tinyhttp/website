@@ -450,12 +450,12 @@ app.engine('eta', renderFile)
 app.render(
   'index',
   { name: 'Eta' },
+  {
+    /* some options */
+  },
   (err, html) => {
     if (err) throw err
     doSomethingWithHTML(html)
-  },
-  {
-    /* some options */
   }
 )
 ```
