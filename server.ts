@@ -151,7 +151,7 @@ async function startApp() {
           readme?: string
           versions: {
             [key: string]: {
-              repository: {
+              repository?: {
                 directory?: string
                 url?: string
                 type: string
@@ -182,7 +182,7 @@ async function startApp() {
 
         const repo = pkgBody.repository
 
-        const link = repo.url
+        const link = repo?.url
           ? repo.url.replace(repo.type + '+', '').replace('.git', '')
           : null
 
@@ -190,7 +190,7 @@ async function startApp() {
           `pages/mw.eta`,
           {
             link,
-            dir: repo.directory,
+            dir: repo?.directory,
             readme: marked.parse(json.readme || ''),
             pkg: name,
             version,
