@@ -633,6 +633,8 @@ console.dir(req.query.color)
 
 #### `req.route`
 
+> This property can be enabled via `enableReqRoute` setting
+
 Contains the currently-matched route, a string. For example:
 
 ```ts
