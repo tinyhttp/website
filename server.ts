@@ -1,24 +1,24 @@
 import { App, Request, Response, renderTemplate } from '@tinyhttp/app'
 import serve from 'sirv'
-import { enableCaching, send, sendFile, sendStatus } from '@tinyhttp/send'
+import {
+  enableCaching,
+  send,
+  sendFile,
+  sendStatus,
+  status,
+} from '@tinyhttp/send'
 import { formatResponse } from '@tinyhttp/res'
 import { getQueryParams } from '@tinyhttp/url'
 import * as eta from 'eta'
-import { EtaConfig } from 'eta/dist/types/config'
 import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { gfmHeadingId } from 'marked-gfm-heading-id'
-import shiki from 'shiki'
+import * as shiki from 'shiki'
 import { lruSend } from 'lru-send'
-import { fetchBuilder, FileSystemCache } from 'node-fetch-cache'
 import { logger } from '@tinyhttp/logger'
+import { withCache } from 'ultrafetch'
 
-const fetch = fetchBuilder.withCache(
-  new FileSystemCache({
-    cacheDirectory: './.cache',
-    ttl: 1000 * 60 * 60,
-  })
-)
+const ultrafetch = withCache(fetch)
 
 const mwList = [
   '@tinyhttp/cors',
@@ -39,12 +39,12 @@ const mwList = [
   'tinyws',
 ]
 
-const app = new App<EtaConfig>({
+const app = new App<eta.EtaConfig>({
   noMatchHandler: (_, res) => {
     res.format({
       text: (_: Request, res: Response) => res.sendStatus(404),
       html: (_: Request, res: Response) =>
-        res.sendFile(`${process.cwd()}/static/404.html`),
+        res.status(404).sendFile(`${process.cwd()}/static/404.html`),
     })
   },
   applyExtensions: (req, res, next) => {
@@ -53,6 +53,7 @@ const app = new App<EtaConfig>({
     res.send = send(req, res)
     res.sendFile = sendFile(req, res)
     res.sendStatus = sendStatus(req, res)
+    res.status = status(res)
     res.render = renderTemplate(req, res, app)
     res.format = formatResponse(req, res, next)
 
@@ -167,7 +168,9 @@ async function startApp() {
       enableCaching(res, { maxAge: 31536000, immutable: !isDev })
 
       try {
-        const res = await fetch(`https://registry.npmjs.org/${req.params.wild}`)
+        const res = await ultrafetch(
+          `https://registry.npmjs.org/${req.params.wild}`
+        )
 
         status = res.status
         json = await res.json()
