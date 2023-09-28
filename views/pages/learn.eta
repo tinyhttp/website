@@ -469,7 +469,7 @@ app.use((_, res) => void res.render<PartialConfig>('index.eta', { name: 'Eta' })
 app.listen(3000, () => console.log(`Listening on http://localhost:3000`))
 ```
 
-For advanced configuration, refer to [custom view](https://github.com/tinyhttp/tinyhttp/tree/ce2d9926c24c2e74811c6ae9af9b5e7d773d99e0/examples/custom-view) and [eta](https://github.com/tinyhttp/tinyhttp/tree/ce2d9926c24c2e74811c6ae9af9b5e7d773d99e0/examples/eta) examples.
+For advanced configuration, refer to [custom view](https://github.com/tinyhttp/tinyhttp/tree/master/examples/custom-view) and [eta](https://github.com/tinyhttp/tinyhttp/tree/master/examples/eta) examples.
 
 ## Common tasks
 
