@@ -433,19 +433,10 @@ app
 
 ### Template engines
 
-Starting from v0.2.70, tinyhttp supports template engines and provides special methods to work with them, such as [`app.engine`](/docs#appengine), [`app.render`](/docs#apprender) and [`res.render`](/docs#resrender).
+Starting from v0.2.70, tinyhttp had basic support for template engines. Since v2.2, the view/template engine has been revamped for better compatibility with express.
 
-Anything that can be wrapped in this function:
 
-```ts
-function engine(file: string, data, options, callback: (err: unknown, html: unknown) => void) {
-  // ...
-}
-```
-
-can be used as a template engine.
-
-In order to use an engine, you should first register it so later the render function can be used inside tinyhttp.
+In order to use an engine, you should first register it for a specific extension.
 
 ```js
 import { App } from '@tinyhttp/app'
@@ -456,20 +447,29 @@ const app = new App()
 app.engine('eta', eta.renderFile) // maps app.engines['eta'] to eta.renderFile function
 ```
 
-And now we can render any template file using `res.render`:
+Additionally, you can set a default engine (which will be used for all templates by default):
 
 ```js
+app.set('view engine', 'eta')
+```
+
+And now it's possible to render any template file using the `res.render` method:
+
+```ts
 import { App } from '@tinyhttp/app'
 import eta from 'eta'
+import type { PartialConfig } from 'eta/dist/types/config' // make `res.render` inherit the template engine settings type
 
 const app = new App()
 
 app.engine('eta', eta.renderFile)
 
-app.use((_, res) => res.render('index.eta', { name: 'Eta' }))
+app.use((_, res) => void res.render<PartialConfig>('index.eta', { name: 'Eta' }))
 
 app.listen(3000, () => console.log(`Listening on http://localhost:3000`))
 ```
+
+For advanced configuration, refer to [custom view](https://github.com/tinyhttp/tinyhttp/tree/master/examples/custom-view) and [eta](https://github.com/tinyhttp/tinyhttp/tree/master/examples/eta) examples.
 
 ## Common tasks
 
