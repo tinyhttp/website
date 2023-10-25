@@ -22,13 +22,15 @@
   --vp-code-tab-divider: var(--vp-c-gray-soft);
   --vp-custom-block-tip-bg: var(--vp-c-gray-soft);
 
-  --vp-c-bg: #f0dae1;
+  --vp-c-bg: #f2e3e7;
+  --vp-c-divider: #c8b9d5;
 
-  --vp-c-divider: #8463a1;
+  --vp-sidebar-bg-color: #f0dae1;
 }
 
 .dark {
-  --vp-c-bg: #0f0f0f;
+  --vp-c-bg: #2f1820;
+  --vp-c-divider: #48335a;
 }
 
 .dark .DocSearch-Hit-source,

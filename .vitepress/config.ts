@@ -48,7 +48,7 @@ export default defineConfig({
         'Released under the MIT License. Forked from <a href="https://github.com/wagmi-dev/viem/tree/main/site">viem docs</a>',
     },
 
-    logo: { light: '/icon-light.png', dark: '/icon-dark.png' },
+    logo: { src: '/logo.svg', alt: 'tinyhttp' },
 
     nav: [
       { text: 'Docs', link: '/docs/getting-started', activeMatch: '/docs' },
