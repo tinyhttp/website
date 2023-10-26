@@ -42,3 +42,27 @@ As a rule, when you develop web applications, a web framework is not enough. Bel
 ## CSRF
 
 - [malibu](https://github.com/tinyhttp/malibu) - Framework-agnostic CSRF middleware for modern Node.js.
+
+## Body parser
+
+- [milliparsec](https://github.com/tinyhttp/milliparsec) - Tiniest body parser in the universe. Built for modern Node.js.
+
+## Cookies
+
+- [cookie-parser](https://github.com/tinyhttp/cookie-parser) - Cookie parsing middleware for Node.js.
+
+## Metrics
+
+- [ping](https://github.com/tinyhttp/ping) - Response time checker middleware.
+
+## Misc
+
+- [unless](https://github.com/tinyhttp/unless) - Unless middleware for tinyhttp.
+
+## CORS
+
+- [cors](https://github.com/tinyhttp/cors) - CORS middleware for modern Node.js.
+
+## Swagger
+
+- [swagger](https://github.com/tinyhttp/swagger) - Swagger integration for tinyhttp.
