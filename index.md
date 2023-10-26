@@ -150,6 +150,7 @@ app
 Help support future development and make tinyhttp a sustainable open-source project:
 
 - [GitHub Sponsors](https://github.com/sponsors/tinyhttp?metadata_campaign=docs_support)
+- [Donate personally or become a contributor](https://github.com/tinyhttp/#help-the-project)
 
 ## Used by
 

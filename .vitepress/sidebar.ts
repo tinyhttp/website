@@ -13,6 +13,31 @@ export const sidebar: DefaultTheme.Sidebar = {
           text: 'Main Concepts',
           link: '/docs/main-concepts',
         },
+        {
+          text: 'Middleware',
+          link: '/docs/middleware',
+        },
+        {
+          text: 'Advanced',
+          link: '/docs/advanced',
+        },
+      ],
+    },
+    {
+      text: 'API Reference',
+      items: [
+        {
+          text: 'Application',
+          link: '/docs/api/application',
+        },
+        {
+          text: 'Request',
+          link: '/docs/api/request',
+        },
+        {
+          text: 'Response',
+          link: '/docs/api/response',
+        },
       ],
     },
   ],

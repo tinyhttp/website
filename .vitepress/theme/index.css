@@ -26,11 +26,16 @@
   --vp-c-divider: #c8b9d5;
 
   --vp-sidebar-bg-color: #f0dae1;
+
+  --vp-local-search-highlight-bg: transparent;
+  --vp-local-search-highlight-text: var(--vp-c-brand);
 }
 
 .dark {
   --vp-c-bg: #2f1820;
   --vp-c-divider: #48335a;
+
+  --vp-sidebar-bg-color: #3e1e29;
 }
 
 .dark .DocSearch-Hit-source,
