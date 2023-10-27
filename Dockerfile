@@ -9,4 +9,4 @@ COPY . .
 ENV NODE_ENV production
 
 RUN ["bun", "run", "build"]
-CMD [ "bun", "start" ]
+CMD [ "bun", "serve" ]
