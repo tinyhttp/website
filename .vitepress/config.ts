@@ -26,7 +26,7 @@ export default defineConfig({
       'meta',
       {
         property: 'og:image',
-        content: 'https://tinyhttp.v1rtl.site/cover.png',
+        content: 'https://tinyhttp.v1rtl.site/cover.jpg',
       },
     ],
     ['meta', { property: 'og:url', content: 'https://tinyhttp.v1rtl.site' }],
