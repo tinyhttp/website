@@ -55,10 +55,6 @@ As a rule, when you develop web applications, a web framework is not enough. Bel
 
 - [ping](https://github.com/tinyhttp/ping) - Response time checker middleware.
 
-## Misc
-
-- [unless](https://github.com/tinyhttp/unless) - Unless middleware for tinyhttp.
-
 ## CORS
 
 - [cors](https://github.com/tinyhttp/cors) - CORS middleware for modern Node.js.
@@ -66,3 +62,7 @@ As a rule, when you develop web applications, a web framework is not enough. Bel
 ## Swagger
 
 - [swagger](https://github.com/tinyhttp/swagger) - Swagger integration for tinyhttp.
+
+## Misc
+
+- [unless](https://github.com/tinyhttp/unless) - Unless middleware for tinyhttp.
