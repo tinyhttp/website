@@ -86,7 +86,6 @@ export default defineConfig({
       provider: 'local',
     },
   },
-  outDir: 'dist',
   vite: {
     server: {
       fs: {
@@ -95,8 +94,3 @@ export default defineConfig({
     },
   },
 })
-
-function toPatchVersionRange(version: string) {
-  const [major, minor] = version.split('.').slice(0, 2)
-  return `${major}.${minor}.x`
-}
