@@ -293,6 +293,9 @@ app
 
 > Starting from v0.2.70, tinyhttp had basic support for template engines. Since v2.2, the view engine has been revamped for better compatibility with express.
 
+> [Eta v2](https://eta.js.org/docs/2.x.x/examples/express) works best with tinyhttp. With [Eta v3](https://eta.js.org/docs/api#setting-up-eta) there's no need to register the engine, you should render templates using an `Eta` instance.
+
+
 In order to use an engine, you should first register it for a specific extension.
 
 ```js
