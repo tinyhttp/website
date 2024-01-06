@@ -154,6 +154,7 @@ Help support future development and make tinyhttp a sustainable open-source proj
 
 ## Used by
 
+- [json-server](https://github.com/typicode/json-server)
 - [@vercel/toolbar](https://www.npmjs.com/package/@vercel/toolbar)
 - [catai](https://github.com/withcatai/catai)
 - [hyperschedule](https://github.com/hyperschedule/hyperschedule)
