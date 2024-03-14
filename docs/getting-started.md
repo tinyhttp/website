@@ -46,7 +46,7 @@ tinyhttp new basic my-app
 cd my-app
 
 # Run your app
-node app.js
+node index.js
 ```
 
 ```bash [bun]
