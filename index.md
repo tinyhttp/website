@@ -50,7 +50,7 @@ bun i @tinyhttp/app
         <span class="font-medium text-[15px] opacity-80 w-full text-center">stars</span>
       </div>
       <div class="flex items-center h-full px-2">
-        <span class="font-medium text-[15px] text-center w-full text-black dark:text-white">2.5k</span>
+        <span class="font-medium text-[15px] text-center w-full text-black dark:text-white">2.6k</span>
       </div>
     </div>
     <div class="absolute left-0 right-0 top-0 bottom-0 bg-black/5 dark:bg-white/10 z-[-1]" />
@@ -62,7 +62,7 @@ bun i @tinyhttp/app
         <span class="font-medium text-[15px] opacity-80 w-full text-center">coverage</span>
       </div>
       <div class="flex items-center h-full px-2">
-        <span class="font-medium text-[15px] text-center w-full text-green-600">98%</span>
+        <span class="font-medium text-[15px] text-center w-full text-green-600">96%</span>
       </div>
     </div>
     <div class="absolute left-0 right-0 top-0 bottom-0 bg-green-600 opacity-10 z-[-1]" />
@@ -104,7 +104,7 @@ bun i @tinyhttp/app
       <div class="relative w-full h-[168px] max-lg:h-[142px]">
         <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
           <div class="text-xl font-medium text-black dark:text-white">Fast</div>
-          <div class="mt-[14px] text-[17px] font-medium text-[#919193]">66% faster than Express</div>
+          <div class="mt-[14px] text-[17px] font-medium text-[#919193]">58% faster than Express</div>
           <a href="https://web-frameworks-benchmark.netlify.app/compare?f=tinyhttp,express" rel="noreferrer noopener" target="_blank" class="text-[17px] font-medium">See more</a>
         </div>
       </div>
