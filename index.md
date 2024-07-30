@@ -62,7 +62,7 @@ bun i @tinyhttp/app
         <span class="font-medium text-[15px] opacity-80 w-full text-center">coverage</span>
       </div>
       <div class="flex items-center h-full px-2">
-        <span class="font-medium text-[15px] text-center w-full text-green-600">96%</span>
+        <span class="font-medium text-[15px] text-center w-full text-green-600">98%</span>
       </div>
     </div>
     <div class="absolute left-0 right-0 top-0 bottom-0 bg-green-600 opacity-10 z-[-1]" />
