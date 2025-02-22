@@ -35,7 +35,7 @@ app.use((req, res) => {
 
 Appends the specified `value` to the HTTP response `header` field. If the header is not already set, it creates the header with the specified value. The value parameter can be a string or an array.
 
-> calling [`res.set()`](#resset) after [`res.append()`](#resappend) will reset the previously-set header value.
+> calling [`res.set()`](#res-set) after [`res.append()`](#res-append) will reset the previously-set header value.
 
 ```js
 res.append('Link', ['<http://localhost/>', '<http://localhost:3000/>'])
@@ -79,9 +79,9 @@ res.cookie('rememberme', '1', {
 
 ### `res.clearCookie`
 
-Clears the cookie specified by `name`. For details about the `options` object, see [`res.cookie()`](#rescookie).
+Clears the cookie specified by `name`. For details about the `options` object, see [`res.cookie()`](#res-cookie).
 
-> Web browsers and other compliant clients will only clear the cookie if the given options is identical to those given to [`res.cookie()`](#rescookie), excluding expires and maxAge.
+> Web browsers and other compliant clients will only clear the cookie if the given options is identical to those given to [`res.cookie()`](#res-cookie), excluding expires and maxAge.
 
 ```ts
 res.cookie('name', 'tobi', { path: '/admin' })
@@ -92,7 +92,7 @@ res.clearCookie('name', { path: '/admin' })
 
 Ends the response process. The method comes from [response.end() of http.ServerResponse.](https://nodejs.org/api/http.html#http_response_end_data_encoding_callback).
 
-Can be used to send raw data or end the response without any data at all. If you need to respond with data with proper content type headers set and so on, instead use methods such as [`res.send()`](#ressend) and [`res.json()`](#resjson).
+Can be used to send raw data or end the response without any data at all. If you need to respond with data with proper content type headers set and so on, instead use methods such as [`res.send()`](#res-send) and [`res.json()`](#res-json).
 
 ```ts
 res.end()
@@ -140,7 +140,7 @@ When the parameter is a string, the method sets the `Content-Type` to `"text/htm
 res.send('<p>some html</p>')
 ```
 
-When the parameter is an Array or Object, Express responds with the JSON representation (same as [`res.json`](#resjson)):
+When the parameter is an Array or Object, Express responds with the JSON representation (same as [`res.json`](#res-json)):
 
 ```ts
 res.send({ user: 'tobi' })

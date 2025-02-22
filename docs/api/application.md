@@ -330,7 +330,7 @@ app.engine('eta', renderFile) // map app.engines['eta'] to `renderFile`
 
 > [Eta v2](https://eta.js.org/docs/2.x.x/examples/express) works best with tinyhttp. With [Eta v3](https://eta.js.org/docs/api#setting-up-eta) there's no need to register the engine, you should render templates using an `Eta` instance.
 
-Render a file with the engine that was set previously via [`app.engine`](#appengine). To render and respond with the result, use [`res.render`](#resrender)
+Render a file with the engine that was set previously via [`app.engine`](#app-engine). To render and respond with the result, use [`res.render`](#res-render)
 
 ```js
 import { App } from '@tinyhttp/app'

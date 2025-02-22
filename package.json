@@ -2,12 +2,12 @@
   "name": "site",
   "version": "0.0.0",
   "devDependencies": {
-    "@types/node": "^20.8.7",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.3",
-    "vitepress": "^1.0.0-rc.22",
-    "vue": "^3.2.45"
+    "@types/node": "^20.17.19",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
   },
   "private": true,
   "scripts": {
@@ -15,6 +15,5 @@
     "build": "vitepress build",
     "serve": "vitepress serve"
   },
-  "type": "module",
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+  "type": "module"
 }
