@@ -29,10 +29,10 @@ app.listen(3000)
 
 The app object has methods for
 
-- Routing HTTP requests; see for example, [`app.METHOD`](#appmethod).
-- Configuring middleware; see [`app.route`](#approute).
-- Rendering HTML views; see [`app.render`](#apprender).
-- Registering a template engine; see [`app.engine`](#appengine).
+- Routing HTTP requests; see for example, [`app.METHOD`](#app-method).
+- Configuring middleware; see [`app.route`](#app-route).
+- Rendering HTML views; see [`app.render`](#app-render).
+- Registering a template engine; see [`app.engine`](#app-engine).
 
 The tinyhttp application object can be referred from the request object and the response object as `req.app`, and `res.app`, respectively.
 
@@ -230,7 +230,7 @@ Routes an HTTP request, where METHOD is the HTTP method of the request, such as 
 
 ### `app.all`
 
-This method is like the standard [`app.METHOD()`](#appmethod) methods, except it matches all HTTP verbs.
+This method is like the standard [`app.METHOD()`](#app-method) methods, except it matches all HTTP verbs.
 
 The following callback is executed for requests to `/secret` whether using GET, POST, PUT, DELETE, or any other HTTP request method:
 
