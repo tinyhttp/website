@@ -43,7 +43,7 @@ bun i @tinyhttp/app
 :::
 
   </div>
-  <div class="flex justify-between space-x-2">
+  <div class="flex justify-between space-x-2 stats">
   <a href="https://github.com/tinyhttp/tinyhttp/stargazers" class="cursor-pointer h-10 max-w-[120px] flex-1 relative rounded-lg overflow-hidden border border-black/10 dark:border-white/20" style="color: inherit;" rel="noreferrer noopener" target="_blank">
     <div class="absolute flex z-0 p-[6px] h-full w-full">
       <div class="flex-1 bg-white/60 dark:bg-black/40 flex items-center w-full h-full rounded-md">
@@ -56,7 +56,7 @@ bun i @tinyhttp/app
     <div class="absolute left-0 right-0 top-0 bottom-0 bg-black/5 dark:bg-white/10 z-[-1]" />
     <div class="absolute left-0 right-0 top-0 bottom-0 backdrop-blur-[2px] backdrop-filter z-[-1]" />
   </a>
-  <a href="https://coveralls.io/github/tinyhttp/tinyhttp" class="cursor-pointer h-10 max-w-[160px] flex-1 relative rounded-lg overflow-hidden border border-green-400/50" style="color: inherit;" rel="noreferrer noopener" target="_blank">
+  <a href="https://coveralls.io/github/tinyhttp/tinyhttp" class="h-10 max-w-[160px] flex-1 relative rounded-lg overflow-hidden border border-green-400/50" style="color: inherit;" rel="noreferrer noopener" target="_blank">
     <div class="absolute flex z-0 p-[6px] h-full w-full">
       <div class="flex-1 bg-white/60 dark:bg-black/40 flex items-center w-full h-full rounded-md">
         <span class="font-medium text-[15px] opacity-80 w-full text-center">coverage</span>

@@ -93,3 +93,7 @@ h3.vp-sponsor-tier {
 .vp-doc a:hover {
   text-decoration: underline;
 }
+
+.stats a::after {
+  content: none !important;
+}
