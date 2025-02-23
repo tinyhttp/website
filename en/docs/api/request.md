@@ -134,7 +134,7 @@ console.dir(req.fresh)
 
 ### `req.stale`
 
-Indicates whether the request is “stale,” and is the opposite of `req.fresh`. For more information, see [`req.fresh`](#reqfresh).
+Indicates whether the request is “stale,” and is the opposite of `req.fresh`. For more information, see [`req.fresh`](#req-fresh).
 
 ```ts
 console.dir(req.stale)

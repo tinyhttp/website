@@ -150,12 +150,12 @@ Here's a list of all of the settings:
 
 Enabled a list of Request object extensions related to network.
 
-- [`req.protocol`](#reqprotocol)
-- [`req.secure`](#reqsecure)
-- [`req.hostname`](#reqhostname)
-- [`req.ip`](#reqip)
-- [`req.ips`](#reqips)
-- [`req.subdomains`](#reqsubdomains)
+- [`req.protocol`](#req-protocol)
+- [`req.secure`](#req-secure)
+- [`req.hostname`](#req-hostname)
+- [`req.ip`](#req-ip)
+- [`req.ips`](#req-ips)
+- [`req.subdomains`](#req-subdomains)
 
 #### `subdomainOffset`
 
