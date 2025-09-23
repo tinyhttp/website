@@ -83,32 +83,6 @@ bun i @tinyhttp/app
   </div>
   </div>
   </div>
-  <div class="flex justify-between flex-wrap mt-16 max-sm:hidden">
-    <div class="pr-2 w-1/4 max-lg:pb-3 max-sm:px-0 max-lg:w-1/2 max-sm:w-full ">
-      <div class="relative w-full h-[168px] max-lg:h-[142px] overflow-hidden">
-        <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col justify-between w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
-          <div class="text-xl font-medium text-black dark:text-white">Express compatibility</div>
-          <div class="text-[17px] font-medium text-[#919193]">Works with most of the Express middleware out of the box.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pl-2 pr-2 max-sm:px-0 max-lg:pb-3 max-lg:pr-0 w-1/4 max-lg:w-1/2 max-sm:w-full ">
-      <div class="relative w-full h-[168px] max-lg:h-[142px]">
-        <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
-          <div class="text-xl font-medium text-black dark:text-white">Async support</div>
-          <div class="mt-[14px] text-[17px] font-medium text-[#919193]">async / await no longer crashes or hangs your app.</div>
-        </div>
-      </div>
-    </div>
-    <div class="pl-2 w-1/4 max-sm:px-0 max-lg:w-1/2 max-sm:w-full">
-      <div class="relative w-full h-[168px] max-lg:h-[142px]">
-        <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col justify-between w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
-          <div class="text-xl font-medium text-black dark:text-white">Prebuilt middleware</div>
-          <div class="text-[17px] font-medium text-[#919193]">Re-written with latest ECMAScript and types out of the box.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div class="h-16" />
@@ -132,9 +106,13 @@ app
 
 ## Features
 
-- **ESM-only**. Embraces the standard modules.
-- **No polyfills**. [75% smaller](https://arve0.github.io/npm-download-size/#@tinyhttp%2fapp) install size, faster CI builds.
-- **Strongly typed**. Works well with TypeScript.
+- ⚙ Express middleware compat
+- ↪ Async error handling support
+- ☑ ESM-only
+- 🚀 No legacy compat or useless polyfills
+- 🤏 Minimal dependencies (3x less than express v5)
+- 🔨 Types out of the box
+- 🔥 Middlewares for common tasks
 
 ## Support
 
