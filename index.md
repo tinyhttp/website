@@ -100,15 +100,6 @@ bun i @tinyhttp/app
         </div>
       </div>
     </div>
-    <div class="pl-2 pr-2 max-sm:px-0 max-lg:pb-3 max-lg:pr-0 w-1/4 max-lg:w-1/2 max-sm:w-full">
-      <div class="relative w-full h-[168px] max-lg:h-[142px]">
-        <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
-          <div class="text-xl font-medium text-black dark:text-white">Fast</div>
-          <div class="mt-[14px] text-[17px] font-medium text-[#919193]">58% faster than Express</div>
-          <a href="https://web-frameworks-benchmark.netlify.app/compare?f=tinyhttp,express" rel="noreferrer noopener" target="_blank" class="text-[17px] font-medium">See more</a>
-        </div>
-      </div>
-    </div>
     <div class="pl-2 w-1/4 max-sm:px-0 max-lg:w-1/2 max-sm:w-full">
       <div class="relative w-full h-[168px] max-lg:h-[142px]">
         <div class="border-black dark:border-white border border-solid border-opacity-10 dark:border-opacity-10 rounded-lg h-full px-5 py-6 absolute z-10 flex flex-col justify-between w-full bg-[rgba(245,160,230,0.1)] dark:bg-[rgba(49,49,54,0.25)]">
