@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar'
 
+import tailwindcss from "@tailwindcss/vite";
+
+
 const title = 'tinyhttp'
 const description =
   'modern Express-like web framework written in TypeScript and compiled to native ESM with minimal dependencies.'
@@ -76,7 +79,6 @@ export default defineConfig({
   title: title,
   titleTemplate: `:title · ${title}`,
   description,
-
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -152,6 +154,7 @@ export default defineConfig({
     },
   },
   vite: {
+    plugins: [tailwindcss()],
     server: {
       fs: {
         allow: ['../..'],

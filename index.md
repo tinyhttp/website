@@ -5,6 +5,7 @@ title: tinyhttp
 titleTemplate: :title · 0-legacy, tiny & fast web framework as a replacement of Express
 description: modern Express-like web framework written in TypeScript and compiled to native ESM with minimal dependencies.
 layout: home
+
 ---
 
 <script setup lang="ts">
@@ -113,6 +114,10 @@ app
 - 🤏 Minimal dependencies (3x less than express v5)
 - 🔨 Types out of the box
 - 🔥 Middlewares for common tasks
+
+## Sponsors
+
+[![LambdaTest](https://www.lambdatest.com/blue-logo.png)](https://www.lambdatest.com/?utm_source=tinyhttp&utm_medium=sponsor)
 
 ## Support
 
